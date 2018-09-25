@@ -1,17 +1,12 @@
 
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
+
 body {
 	background-color: lightcyan;
     width: 960px;
     height: 500px;
     margin-left: 200px;
     margin-top: 60px;
-}
-ol, ul {
-	list-style: none;
+
 }
 blockquote, q {
 	quotes: none;

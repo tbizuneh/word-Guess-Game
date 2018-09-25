@@ -7,9 +7,9 @@ var gameObject = {
 	correctGuesses: [],
 	correctGuessesInOrder: [],
 
-	bandsArray: ["SPORT", "FOOD", "LIFE", "LOVE", "FAMILY", "FRIENDS", "TECHNOLOGY", "WORK", "EDUCATION"],
+	wordsArray: ["SPORT", "FOOD", "LIFE", "LOVE", "FAMILY", "FRIENDS", "TECHNOLOGY", "WORK", "EDUCATION"],
 	randomWord: "",
-	bandLetters:[],
+	wordLetters:[],
 
 	isMatch: null,
 	isRepeat: null,
@@ -24,11 +24,11 @@ var gameObject = {
 		random_num = Math.floor(random_num);
 
 		
-		this.randomWord = this.bandsArray[random_num];
-		this.bandLetters = this.randomWord.split("");
+		this.randomWord = this.wordsArray[random_num];
+		this.wordLetters = this.randomWord.split("");
 
 		
-		console.log(this.randomWord + " " + this.bandLetters);
+		console.log(this.randomWord + " " + this.wordLetters);
 
 	
 		this.allGuesses = [];
@@ -57,8 +57,8 @@ var gameObject = {
 	checkMatch: function(){
 		var matchCounter = 0;
 
-		for (var i=0; i < this.bandLetters.length; i++){
-			if (this.currentLetter == this.bandLetters[i]){
+		for (var i=0; i < this.wordLetters.length; i++){
+			if (this.currentLetter == this.wordLetters[i]){
 				matchCounter++;
 			}
     }
@@ -89,19 +89,19 @@ var gameObject = {
 	revealBand: function(){
 		
 		if (this.correctGuesses.length == 0){
-			for (var i =0; i<this.bandLetters.length; i++){
+			for (var i =0; i<this.wordLetters.length; i++){
 				this.correctGuessesInOrder[i] = "_";
 			}
 		}
 		else {
 	
-			for (var i=0; i<this.bandLetters.length; i++){
+			for (var i=0; i<this.wordLetters.length; i++){
 				
-				if (this.correctGuessesInOrder[i] != this.bandLetters[i]){
+				if (this.correctGuessesInOrder[i] != this.wordLetters[i]){
 					
 					for (var j=0; j<this.correctGuesses.length; j++){
-						if (this.correctGuesses[j] == this.bandLetters[i]){
-							this.correctGuessesInOrder[i] = this.bandLetters[i];
+						if (this.correctGuesses[j] == this.wordLetters[i]){
+							this.correctGuessesInOrder[i] = this.wordLetters[i];
 						}
 						else {
 							this.correctGuessesInOrder[i] = "_";
@@ -120,13 +120,13 @@ var gameObject = {
 		var counter = 0;
 
 		
-		for (var i=0; i<this.bandLetters.length; i++){
-			if (this.correctGuessesInOrder[i] == this.bandLetters[i]){
+		for (var i=0; i<this.wordLetters.length; i++){
+			if (this.correctGuessesInOrder[i] == this.wordLetters[i]){
 				counter++;
 			}
 		}
 
-		if (counter == this.bandLetters.length){
+		if (counter == this.wordLetters.length){
 			alert("You win");
 			this.winCount++;
 			this.generateWord();
@@ -157,7 +157,7 @@ document.onkeyup = function(q) {
 
 	gameObject.allGuesses.push(gameObject.currentLetter);
 
-	console.log("Current Letter: " + gameObject.currentLetter + "\n" + "Band Letters: " + gameObject.bandLetters + "\n" + "All Guesses: " + gameObject.allGuesses);
+	console.log("Current Letter: " + gameObject.currentLetter + "\n" + "Word Letters: " + gameObject.bandLetters + "\n" + "All Guesses: " + gameObject.allGuesses);
 
 
 	gameObject.checkRepeat();
@@ -175,5 +175,4 @@ document.onkeyup = function(q) {
 
 	
 	gameObject.checkProgress();
-}
-
+};
