@@ -1,6 +1,9 @@
 * {
     box-sizing: border-box;
 }
+.play{
+    display: none;
+}
 header{
     text-align: center;
     background-color: gray;
