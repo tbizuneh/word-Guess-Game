@@ -7,7 +7,7 @@ var gameObject = {
 	correctGuesses: [],
 	correctGuessesInOrder: [],
 
-	wordsArray: ["SPORT", "FOOD", "LIFE", "LOVE", "FAMILY", "FRIENDS", "TECHNOLOGY", "WORK", "EDUCATION"],
+	wordsArray: ["JEEP", "VOLVO", "LEXUS", "SUBARU", "LINCOLN", "TOYOTA", "AUDI", "HONDA", "MERCEDES"],
 	randomWord: "",
 	wordLetters:[],
 
@@ -19,7 +19,7 @@ var gameObject = {
 	winCount:0,
 
 	generateWord: function(){
-		
+		alert("Hint: car brands")
 		var random_num = Math.random() * 9;
 		random_num = Math.floor(random_num);
 
